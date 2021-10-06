@@ -1,23 +1,29 @@
 "use strict"
 
-const imagens = [
-    "./img/captainAmerica.jpg",
-    "./img/captainMarvel.jpg",
-    "./img/ironMan.jpg",
-    "./img/hulk.jpg",
-    "./img/ironMan2.jpg",
-    "./img/thor.jpg",
-    "./img/avengers.jpg",
-    "./img/ironMan3.jpg",
-    "./img/thor2.jpg",
-    "./img/captainAmerica2.jpg",
-    "./img/guardiansGalaxy.jpg",
-    "./img/guardiansGalaxy2.jpg",
-    "./img/avengers2.jpg",
-    "./img/antMan.jpg"
-]
+const imagens = {
+    "url": [
+        "./img/captainAmerica.jpg",
+        "./img/captainMarvel.jpg",
+        "./img/ironMan.jpg",
+        "./img/hulk.jpg",
+        "./img/ironMan2.jpg",
+        "./img/thor.jpg",
+        "./img/avengers.jpg",
+        "./img/ironMan3.jpg",
+        "./img/thor2.jpg",
+        "./img/captainAmerica2.jpg",
+        "./img/guardiansGalaxy.jpg",
+        "./img/guardiansGalaxy2.jpg",
+        "./img/avengers2.jpg",
+        "./img/antMan.jpg"
+    ]
+}
 
-const limparId = (url) => url.replace("./img/", "").split(".")[0].replace(" ", "-")
+const limparId = (url) => {
+    const ultimaBarra = url.lastIndexOf("/") + 1
+    const ultimoPonto = url.lastIndexOf(".")
+    return url.substring(ultimaBarra, ultimoPonto).replace(" ", "-")
+}
 
 const criarItem = (urlImagem) => {
     const container = document.querySelector(".galeria-container")
@@ -66,7 +72,7 @@ const criarSlide = (urlImagem, indice, arr) => {
 
 const carregarSlide = (imagens) => imagens.forEach(criarSlide)
 
-const carregarImagens = () => imagens.forEach(criarItem)
+const carregarImagens = (imagens) => imagens.forEach(criarItem)
 
-carregarImagens(imagens)
-carregarSlide(imagens)
+carregarImagens(imagens.url)
+carregarSlide(imagens.url)

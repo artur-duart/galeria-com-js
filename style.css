@@ -17,6 +17,8 @@ body {
     backdrop-filter: blur(8px);
     color: #FFF;
     font-size: 1.5rem;
+    overflow-x: hidden;
+    padding: 10px 10px 10px 0px;
 }
 
 header {
@@ -122,6 +124,7 @@ main {
 }
 
 footer {
+    margin-top: 10px;
     height: 50px;
     font-size: 1rem;
     font-weight: 100;
@@ -131,4 +134,23 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@media (max-width: 1280px) {
+    body {
+        background-image: none;
+        background-color: #D33338;
+    }
+}
+
+@media (min-width: 1024px) {
+    body {
+        padding: 10px 10px 10px 5px;
+    }
+}
+
+@media (max-width: 414px) {
+    h1 {
+        font-size: 42px;
+    }
 }
